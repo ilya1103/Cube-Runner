@@ -75,7 +75,7 @@ namespace Code.Player
         private void RemoveCube(GameObject cube) => 
             RemoveCubeWithDelay(cube).Forget();
 
-        private async UniTaskVoid RemoveCubeWithDelay(GameObject cubeObject)  //Чтобы при конце игры не удалялись кубы под игроком
+        private async UniTaskVoid RemoveCubeWithDelay(GameObject cubeObject)  
         {
             cubeObject.transform.SetParent(null);
             await UniTask.Delay(TimeSpan.FromSeconds(DelayToCheckIfGameStillRunning));

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 534551658678200865}
   - component: {fileID: 1333912386664595307}
   m_Layer: 0
-  m_Name: Ground Pooler
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

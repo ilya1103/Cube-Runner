@@ -102,7 +102,7 @@ namespace Code.Ground
             }
         }*/
         
-        private async UniTask RespawnCooldown() //Нужно, потому что за одно столкновение у нескольких кубов может вызваться onCollisionWall и зареспавнятся несколько ground
+        private async UniTask RespawnCooldown() 
         {
             _isReadyToSpawn = false;
             await UniTask.Delay(TimeSpan.FromSeconds(RespawnDelay));
