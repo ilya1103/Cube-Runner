@@ -19,21 +19,14 @@ namespace Code.Cameras
         public void Construct(CubeEvents cubeEvents)
         {
             _cubeEvents = cubeEvents;
-            _cubeEvents.onAddNewCube += OnAddNewCube;
             _cubeEvents.onCollisionWall += OnCollisionWall;
         }
 
-        private void OnDestroy()
-        {
-            _cubeEvents.onAddNewCube -= OnAddNewCube;
+        private void OnDestroy() =>
             _cubeEvents.onCollisionWall -= OnCollisionWall;
-        }
 
         private void Awake() => 
             _noise = _virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-        private void OnAddNewCube(GameObject gameObj) =>
-            ShakeCamera().Forget();
 
         private void OnCollisionWall(GameObject gameObj) =>
             ShakeCamera().Forget();

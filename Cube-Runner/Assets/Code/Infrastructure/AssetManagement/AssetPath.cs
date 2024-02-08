@@ -2,8 +2,7 @@ namespace Code.Infrastructure.AssetManagement
 {
     public static class AssetPath
     {
-        public const string GroundGeneratorPath = "Prefabs/Ground/Ground Generator";
-        public const string GroundPoolerPath = "Prefabs/Ground/Ground Pooler";
+        public const string GroundPath = "Prefabs/Ground/Ground Pooler";
         public const string GroundVariant1Path = "Prefabs/Ground/VariantsOfTrackGround/TrackGround (1) Variant";
         public const string GroundVariant2Path = "Prefabs/Ground/VariantsOfTrackGround/TrackGround (2) Variant";
         public const string GroundVariant3Path = "Prefabs/Ground/VariantsOfTrackGround/TrackGround (3) Variant";

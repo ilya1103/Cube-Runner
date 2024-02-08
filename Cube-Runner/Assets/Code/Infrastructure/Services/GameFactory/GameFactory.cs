@@ -24,20 +24,12 @@ namespace Code.Infrastructure.Services.GameFactory
             return _diContainer.InstantiatePrefab(gameEventManager, cubeHolderTransform);
         }
 
-        public GameObject CreateGroundPooler()
+        public GameObject CreateGround()
         {
-            GameObject groundPooler = _assetProvider.Instantiate(AssetPath.GroundPoolerPath);
+            GameObject groundPooler = _assetProvider.Instantiate(AssetPath.GroundPath);
             GameObject result = _diContainer.InstantiatePrefab(groundPooler);
             SceneManager.MoveGameObjectToScene(result, SceneManager.GetActiveScene());
             _groundPooler = result.transform;
-            return result;
-        }
-
-        public GameObject CreateGroundGenerator()
-        {
-            GameObject groundGenerator = _assetProvider.Instantiate(AssetPath.GroundGeneratorPath);
-            GameObject result = _diContainer.InstantiatePrefab(groundGenerator);
-            SceneManager.MoveGameObjectToScene(result, SceneManager.GetActiveScene());
             return result;
         }
 

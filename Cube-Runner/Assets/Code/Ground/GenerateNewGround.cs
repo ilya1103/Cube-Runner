@@ -12,9 +12,9 @@ namespace Code.Ground
     public class GenerateNewGround : MonoBehaviour
     {
         [SerializeField] private List<GameObject> _activeGrounds = new();
+        [SerializeField] private GroundPool groundPool;
 
         private IStaticDataService _staticDataService;
-        private GroundPooler _groundPooler;
         private CubeEvents _cubeEvents;
         private GameOver _gameOver;
 
@@ -30,9 +30,8 @@ namespace Code.Ground
         public void Construct(IStaticDataService staticDataService) =>
             _staticDataService = staticDataService;
 
-        public void Construct(GroundPooler groundPooler, CubeEvents cubeEvents, GameOver gameOver)
+        public void Construct(CubeEvents cubeEvents, GameOver gameOver)
         {
-            _groundPooler = groundPooler;
             _cubeEvents = cubeEvents;
             _cubeEvents.onCollisionWall += RespawnGround;
             _gameOver = gameOver;
@@ -81,7 +80,7 @@ namespace Code.Ground
 
         private void GetObjectFromPool()
         {
-            GameObject pooledProjectile = _groundPooler.GetPooledObject();
+            GameObject pooledProjectile = groundPool.GetPooledObject();
             if (pooledProjectile != null)
             {
                 pooledProjectile.SetActive(true);

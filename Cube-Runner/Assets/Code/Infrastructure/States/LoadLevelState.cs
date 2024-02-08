@@ -79,12 +79,8 @@ namespace Code.Infrastructure.States
             cinemachine.GetComponent<CinemachineVirtualCamera>().m_Follow = _player;
         }
 
-        private void InitGround()
-        {
-            GroundPooler groundPooler = _gameFactory.CreateGroundPooler().GetComponent<GroundPooler>();
-            GenerateNewGround groundGenerator = _gameFactory.CreateGroundGenerator().GetComponent<GenerateNewGround>();
-            groundGenerator.Construct(groundPooler, _cubeEvents, _gameOver);
-        }
+        private void InitGround() =>
+            _gameFactory.CreateGround().GetComponent<GenerateNewGround>().Construct(_cubeEvents, _gameOver);
 
         private async UniTaskVoid StartGameplay()
         {

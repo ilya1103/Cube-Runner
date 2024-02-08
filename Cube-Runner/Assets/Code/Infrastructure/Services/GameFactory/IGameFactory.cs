@@ -4,8 +4,7 @@ namespace Code.Infrastructure.Services.GameFactory
 {
     public interface IGameFactory
     {
-        GameObject CreateGroundPooler();
-        GameObject CreateGroundGenerator();
+        GameObject CreateGround();
         GameObject CreateGroundVariant1();
         GameObject CreateGroundVariant2();
         GameObject CreateGroundVariant3();
