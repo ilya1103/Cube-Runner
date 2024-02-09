@@ -10,7 +10,7 @@ namespace Code.Editor
         private const string PlayerInitialPoint = "PlayerInitialPoint";
         private const string CameraInitialPoint = "CameraInitialPoint";
 
-        private void OnEnable()
+        /*private void OnEnable()
         {
             LevelStaticData levelStaticData = (LevelStaticData)target;
 
@@ -28,6 +28,6 @@ namespace Code.Editor
             levelStaticData.InitialGroundCount = 3;
             
             EditorUtility.SetDirty(target);
-        }
+        }*/
     }
 }
