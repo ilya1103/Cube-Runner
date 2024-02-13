@@ -2,27 +2,26 @@ using Cinemachine;
 using Code.Cameras;
 using Code.Ground;
 using Code.Infrastructure.Services.GameFactory;
+using Code.Infrastructure.Services.LoadingCurtainService;
 using Code.Infrastructure.Services.SceneManagement;
 using Code.Infrastructure.Services.StaticData;
 using Code.Infrastructure.Services.UIFactory;
 using Code.Infrastructure.States.Api;
-using Code.Infrastructure.UI;
 using Code.Player;
 using Code.PossibleCollision;
 using Code.StaticData;
 using Code.UI;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Code.Infrastructure.States
 {
     public class LoadLevelState : IPayloadedState<string>
     {
+        private readonly ILoadingCurtainService _loadingCurtainService;
         private readonly ISceneLoader _sceneLoader;
         private readonly IStaticDataService _staticData;
         private readonly IGameFactory _gameFactory;
         private readonly IUIFactory _uiFactory;
-        private readonly LoadingCurtain _loadingCurtain;
 
         private CubeEvents _cubeEvents;
         private GameObject _gameUI;
@@ -30,9 +29,9 @@ namespace Code.Infrastructure.States
         private GameOver _gameOver;
         private Transform _player;
 
-        public LoadLevelState(LoadingCurtain loadingCurtain, ISceneLoader sceneLoader, IStaticDataService staticData, IGameFactory gameFactory, IUIFactory uiFactory)
+        public LoadLevelState(ILoadingCurtainService loadingCurtainService, ISceneLoader sceneLoader, IStaticDataService staticData, IGameFactory gameFactory, IUIFactory uiFactory)
         {
-            _loadingCurtain = loadingCurtain;
+            _loadingCurtainService = loadingCurtainService;
             _sceneLoader = sceneLoader;
             _staticData = staticData;
             _gameFactory = gameFactory;
@@ -84,7 +83,7 @@ namespace Code.Infrastructure.States
             _gameFactory.CreateGround().GetComponent<GenerateNewGround>().Construct(_cubeEvents, _gameOver);
 
         private void HideLoadingCurtain() =>
-            _loadingCurtain.Hide().Forget();
+            _loadingCurtainService.Hide();
 
         public void Exit() { }
     }

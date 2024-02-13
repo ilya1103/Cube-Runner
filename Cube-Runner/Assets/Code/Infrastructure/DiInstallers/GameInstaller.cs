@@ -1,5 +1,6 @@
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Services.GameFactory;
+using Code.Infrastructure.Services.LoadingCurtainService;
 using Code.Infrastructure.Services.SceneManagement;
 using Code.Infrastructure.Services.StaticData;
 using Code.Infrastructure.Services.UIFactory;
@@ -26,6 +27,7 @@ namespace Code.Infrastructure.DiInstallers
         private void BindInfrastructureServices()
         {
             Container.Bind<LoadingCurtain>().FromComponentInNewPrefab(_loadingCurtain).AsSingle();
+            Container.Bind<ILoadingCurtainService>().To<LoadingCurtainService>().AsSingle();
             Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
             Container.Bind<IGameFactory>().To<GameFactory>().AsSingle();
             Container.Bind<IUIFactory>().To<UIFactory>().AsSingle();

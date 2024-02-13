@@ -85,6 +85,8 @@
     <Compile Include="Assets\Code\Infrastructure\GameRunner.cs" />
     <Compile Include="Assets\Code\Infrastructure\Services\StaticData\StaticDataService.cs" />
     <Compile Include="Assets\Code\Player\GameOver.cs" />
+    <Compile Include="Assets\Code\Infrastructure\Services\LoadingCurtainService\LoadingCurtainService.cs" />
+    <Compile Include="Assets\Code\Infrastructure\Services\LoadingCurtainService\ILoadingCurtainService.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

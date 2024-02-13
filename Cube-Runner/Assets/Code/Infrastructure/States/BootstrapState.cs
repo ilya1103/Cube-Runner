@@ -1,20 +1,20 @@
+using Code.Infrastructure.Services.LoadingCurtainService;
 using Code.Infrastructure.Services.SceneManagement;
 using Code.Infrastructure.Services.StaticData;
 using Code.Infrastructure.States.Api;
-using Code.Infrastructure.UI;
 
 namespace Code.Infrastructure.States
 {
     public class BootstrapState : IState
     {
-        private readonly LoadingCurtain _loadingCurtain;
+        private readonly ILoadingCurtainService _loadingCurtainService;
         private readonly IGameStateMachine _stateMachine;
         private readonly ISceneLoader _sceneLoader;
         private readonly IStaticDataService _staticDataService;
 
-        public BootstrapState(LoadingCurtain loadingCurtain, IGameStateMachine stateMachine, ISceneLoader sceneLoader, IStaticDataService staticDataService)
+        public BootstrapState(ILoadingCurtainService loadingCurtainService, IGameStateMachine stateMachine, ISceneLoader sceneLoader, IStaticDataService staticDataService)
         {
-            _loadingCurtain = loadingCurtain;
+            _loadingCurtainService = loadingCurtainService;
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
             _staticDataService = staticDataService;
@@ -22,7 +22,7 @@ namespace Code.Infrastructure.States
 
         public void Enter()   
         {
-            _loadingCurtain.Show();
+            _loadingCurtainService.Show();
             
             RegisterInfrastructureServices();
 
