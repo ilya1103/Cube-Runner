@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Code\Editor\LevelDataEditor.cs" />
-    <Compile Include="Assets\Code\Editor\ScenesDataEditor.cs" />
+    <Compile Include="Assets\Project\Code\Editor\LevelDataEditor.cs" />
+    <Compile Include="Assets\Project\Code\Editor\ScenesDataEditor.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.27f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

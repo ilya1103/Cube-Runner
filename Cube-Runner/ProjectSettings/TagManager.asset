@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerInitialPoint
   - CameraInitialPoint
+  - Ground
   layers:
   - Default
   - TransparentFX
