@@ -24,7 +24,7 @@ namespace Project.Code.Player
 
         private static readonly int Jump = Animator.StringToHash("Jump");
 
-        private const double DelayBeforeDestroy = 0.5;
+        private const double DelayBeforeDestroy = 3;
         private const double DelayToCheckIfGameStillRunning = 1;
         
         private bool _isGameRunning;
