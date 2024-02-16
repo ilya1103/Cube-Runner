@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerInitialPosition: {x: 0, y: 0, z: -20}
   PlayerInitialRotation: {x: 0, y: 1, z: 0, w: 0}
-  CameraInitialPosition: {x: 2.8, y: 7.5, z: -33}
+  CameraInitialPosition: {x: 3.3, y: 7.5, z: -33}
   CameraInitialRotation: {x: 0.2528679, y: -0.0809388, z: 0.02123389, w: 0.9638754}
   PoolSize: 7
   InitialGroundCount: 3
