@@ -83,7 +83,6 @@
     <Compile Include="Assets\Project\Code\PossibleCollision\Pickups\EnablePickups.cs" />
     <Compile Include="Assets\Project\Code\Infrastructure\DiInstallers\GameInstaller.cs" />
     <Compile Include="Assets\Project\Code\Infrastructure\States\LoadLevelState.cs" />
-    <Compile Include="Assets\Project\Code\Infrastructure\GameRunner.cs" />
     <Compile Include="Assets\Project\Code\Infrastructure\Services\StaticData\StaticDataService.cs" />
     <Compile Include="Assets\Project\Code\Player\GameOver.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
