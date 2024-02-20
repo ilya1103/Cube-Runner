@@ -310,9 +310,6 @@
     <Reference Include="unityplastic">
       <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Library\PackageCache\com.unity.collab-proxy@2.0.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
-      <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Library\PackageCache\com.unity.collab-proxy@2.0.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
@@ -328,9 +325,6 @@
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
-      <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
-    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Library\PackageCache\com.unity.collab-proxy@2.0.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
@@ -339,12 +333,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
-      <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
-      <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:\GitHub\CubeSurfer\Cube-Runner\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -869,14 +857,6 @@
     <ProjectReference Include="Zenject-Editor.csproj">
       <Project>{de5570d1-f79e-faf4-5f6f-3bd63b7f7a3c}</Project>
       <Name>Zenject-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
-      <Project>{ec2f2fdc-bd05-05da-7c66-9da7248b6c3d}</Project>
-      <Name>Zenject-PoolMonitor-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj">
-      <Project>{f473bb33-ddfd-012f-e0eb-d202678ae637}</Project>
-      <Name>Zenject-ReflectionBaking-Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Zenject.csproj">
       <Project>{48b9f689-98c6-6974-7218-2e6fc5c356d5}</Project>
