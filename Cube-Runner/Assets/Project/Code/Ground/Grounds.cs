@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Project.Code.Infrastructure.Services.StaticData;
 using Project.Code.Player;
 using Project.Code.PossibleCollision;
@@ -13,7 +14,7 @@ namespace Project.Code.Ground
     {
         [SerializeField] private List<GameObject> _activeGrounds = new();
         [SerializeField] private GroundPool groundPool;
-        [SerializeField] private float _groundSpeed = 100;
+        [SerializeField] private float _timeToTargetPosition = 1;
 
         private IStaticDataService _staticDataService;
         private CubeEvents _cubeEvents;
@@ -40,7 +41,7 @@ namespace Project.Code.Ground
         public void Construct(CubeEvents cubeEvents, GameOver gameOver, PlayerMovement playerMovement)
         {
             _cubeEvents = cubeEvents;
-            _cubeEvents.onCollisionWall += EnableGround;
+            _cubeEvents.CollisionWall += EnableGround;
             _gameOver = gameOver;
             _gameOver.EndGame += OnGameEnd;
             
@@ -52,7 +53,7 @@ namespace Project.Code.Ground
 
         private void OnDestroy()
         {
-            _cubeEvents.onCollisionWall -= EnableGround;
+            _cubeEvents.CollisionWall -= EnableGround;
             _gameOver.EndGame -= OnGameEnd;
         }
 
@@ -69,8 +70,7 @@ namespace Project.Code.Ground
             for (int i = 0; i < initialGroundCount; i++)
             {
                 GetObjectFromPoolAndSetToTargetPosition(false);
-                if (i < initialGroundCount - 1)
-                    _groundTargetPosition += new Vector3(0, 0, _activeGroundIntervalZ);  
+                _groundTargetPosition += new Vector3(0, 0, _activeGroundIntervalZ); 
             }
         }
 
@@ -84,10 +84,10 @@ namespace Project.Code.Ground
 
             _activeGrounds[0].SetActive(false);
             _activeGrounds.RemoveAt(0);
-
-            _groundTargetPosition += new Vector3(0, 0, _activeGroundIntervalZ);  
-
+            
             GetObjectFromPoolAndSetToTargetPosition(true);
+            
+            _groundTargetPosition += new Vector3(0, 0, _activeGroundIntervalZ);
         }
 
         private void GetObjectFromPoolAndSetToTargetPosition(bool shouldMoveGround)
@@ -96,10 +96,11 @@ namespace Project.Code.Ground
             if (pooledProjectile != null)
             {
                 pooledProjectile.SetActive(true);
+                _activeGrounds.Add(pooledProjectile);
                 if (shouldMoveGround)
                 {
                     pooledProjectile.transform.position = _playerMovement.transform.position + new Vector3(_enableGroundOffsetX, _enableGroundOffsetY, _enableGroundOffsetZ);
-                    MoveToEnablePosition(pooledProjectile).Forget();
+                    pooledProjectile.transform.DOMove(_groundTargetPosition, _timeToTargetPosition).SetEase(Ease.Linear);
                 }
                 else
                 {
@@ -109,17 +110,6 @@ namespace Project.Code.Ground
             else
             {
                 Debug.LogWarning("No inactive objects in the pool");
-            }
-
-            _activeGrounds.Add(pooledProjectile);
-        }
-
-        private async UniTaskVoid MoveToEnablePosition(GameObject groundVariant)
-        {
-            while (groundVariant.transform.position != _groundTargetPosition)
-            {
-                groundVariant.transform.position = Vector3.MoveTowards(groundVariant.transform.position, _groundTargetPosition, _groundSpeed * Time.deltaTime);
-                await UniTask.Yield();
             }
         }
 

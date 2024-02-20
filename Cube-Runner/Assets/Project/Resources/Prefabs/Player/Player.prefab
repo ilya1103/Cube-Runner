@@ -294,8 +294,8 @@ MonoBehaviour:
   _gameOver: {fileID: 6874855279673678270}
   _cubeHolderTransform: {fileID: 2410733533148739645}
   _cubeEffect: {fileID: 253324236472890479}
-  _animation: {fileID: 6081668344328268536}
   _animator: {fileID: 5164739209848966065}
+  _textAnimation: {fileID: 6081668344328268536}
 --- !u!1001 &281767995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,6 +464,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5477898226185170795}
     m_Modifications:
+    - target: {fileID: 482205996387500733, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
+        type: 3}
+      propertyPath: m_Name
+      value: CollectCubeText
+      objectReference: {fileID: 0}
+    - target: {fileID: 482205996387500733, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482205997040224146, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 482205997040224159, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8592876449704432112, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
         type: 3}
       propertyPath: m_RootOrder

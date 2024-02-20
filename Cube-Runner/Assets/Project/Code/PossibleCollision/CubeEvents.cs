@@ -5,13 +5,13 @@ namespace Project.Code.PossibleCollision
 {
     public class CubeEvents : MonoBehaviour
     {
-        public event Action<GameObject> onAddNewCube;
-        public event Action<GameObject> onCollisionWall;
+        public event Action<GameObject> AddNewCube;
+        public event Action<GameObject> CollisionWall;
 
-        public void RaiseEventAddNewCube(GameObject otherGameObject) =>
-            onAddNewCube?.Invoke(otherGameObject);
+        public void RaiseEventAddNewCube(GameObject cubeObject) =>
+            AddNewCube?.Invoke(cubeObject);
 
         public void RaiseEventCollisionWall(GameObject cubeObject) =>
-            onCollisionWall?.Invoke(cubeObject);
+            CollisionWall?.Invoke(cubeObject);
     }
 }

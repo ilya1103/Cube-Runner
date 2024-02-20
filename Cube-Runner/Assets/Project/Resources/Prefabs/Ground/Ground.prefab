@@ -63,7 +63,7 @@ MonoBehaviour:
   - {fileID: 1866846672507850031}
   - {fileID: 1866846672303048209}
   groundPool: {fileID: 534551658678200865}
-  _groundSpeed: 100
+  _groundSpeed: 1
 --- !u!1001 &7943877195154523783
 PrefabInstance:
   m_ObjectHideFlags: 0

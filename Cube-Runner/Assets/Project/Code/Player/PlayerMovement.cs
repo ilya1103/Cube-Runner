@@ -8,7 +8,9 @@ namespace Project.Code.Player
         [SerializeField] private GameOver _gameOver;
 
         [SerializeField] private float _sensitivityForEditor = 6;
+#pragma warning disable CS0414 // Field is assigned but its value is never used
         [SerializeField] private float _sensitivityForPhone = 1;
+#pragma warning restore CS0414 // Field is assigned but its value is never used
         [SerializeField] private float _speed;
 
         private GameStart _gameStart;

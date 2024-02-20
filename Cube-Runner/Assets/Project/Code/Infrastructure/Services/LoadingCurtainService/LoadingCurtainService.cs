@@ -1,4 +1,3 @@
-using Cysharp.Threading.Tasks;
 using Project.Code.Infrastructure.UI;
 using Zenject;
 
@@ -16,6 +15,6 @@ namespace Project.Code.Infrastructure.Services.LoadingCurtainService
             _loadingCurtain.Show();
 
         public void Hide() =>
-            _loadingCurtain.Hide().Forget();
+            _loadingCurtain.Hide();
     }
 }

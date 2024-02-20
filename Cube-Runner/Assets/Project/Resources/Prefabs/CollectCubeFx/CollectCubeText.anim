@@ -68,7 +68,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: 1.4021
+        value: 1.4
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -171,9 +171,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
-    path: Text (TMP)
-    classID: 1
+    attribute: m_Enabled
+    path: 
+    classID: 223
     script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -256,7 +256,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: 1.4021
+        value: 1.4
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -359,9 +359,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
-    path: Text (TMP)
-    classID: 1
+    attribute: m_Enabled
+    path: 
+    classID: 223
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0

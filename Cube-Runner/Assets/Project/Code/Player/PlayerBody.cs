@@ -15,14 +15,14 @@ namespace Project.Code.Player
         [SerializeField] private GameOver _gameOver;
         [SerializeField] private Transform _cubeHolderTransform;
         [SerializeField] private ParticleSystem _cubeEffect;
-        [SerializeField] private Animation _animation;
         [SerializeField] private Animator _animator;
+        [SerializeField] private Animation _textAnimation;
 
         private IGameFactory _gameFactory;
         private CubeEvents _cubeEvents;
         private GameStart _gameStart;
 
-        private static readonly int Jump = Animator.StringToHash("Jump");
+        private readonly int Jump = Animator.StringToHash("Jump");
 
         private const double DelayBeforeDestroy = 3;
         private const double DelayToCheckIfGameStillRunning = 1;
@@ -44,20 +44,20 @@ namespace Project.Code.Player
 
         private void OnEnable()
         {
-            _cubeEvents.onAddNewCube += OnAddNewCube;
-            _cubeEvents.onCollisionWall += RemoveCube;
+            _cubeEvents.AddNewCube += AddNewCube;
+            _cubeEvents.CollisionWall += RemoveCube;
             _gameOver.EndGame += OnGameEnd;
         }
 
         private void OnDestroy()
         {
             _gameStart.StartGame -= OnGameStart;
-            _cubeEvents.onAddNewCube -= OnAddNewCube;
-            _cubeEvents.onCollisionWall -= RemoveCube;
+            _cubeEvents.AddNewCube -= AddNewCube;
+            _cubeEvents.CollisionWall -= RemoveCube;
             _gameOver.EndGame -= OnGameEnd;
         }
 
-        private void OnAddNewCube(GameObject cubeGameObject)
+        private void AddNewCube(GameObject cubeGameObject)
         {
             cubeGameObject.SetActive(false);
             
@@ -65,8 +65,8 @@ namespace Project.Code.Player
             GameObject cubeInstance = _gameFactory.CreateCube(_cubeHolderTransform); 
             cubeInstance.GetComponent<DetectCollision>().Construct(_cubeEvents);
             cubeInstance.transform.position = new Vector3(_cubeList[0].transform.position.x, _cubeList[^1].transform.position.y - 1, _cubeList[0].transform.position.z);
-            
-            _animation.Play();
+
+            _textAnimation.Play();
             _cubeEffect.Play();
             _animator.SetTrigger(Jump);
             _cubeList.Add(cubeInstance);
